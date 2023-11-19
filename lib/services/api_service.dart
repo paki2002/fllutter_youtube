@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:fllutter_youtube/Utli/constants.dart';
 import 'package:fllutter_youtube/models/video_model.dart';
+import 'package:fllutter_youtube/utils/constants.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -8,7 +10,7 @@ class APIService{
   Future<List<VideoModel>> getVideos() async{
     List<VideoModel> videosModel =[];
 
-    String _path = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAwBN3FLbI7SIlkK4a3adwYbBGhlolKiXg&maxResults=20&regionCode=PE";
+    String _path = "$pathProduction /search?part=snippet&key=$apiKey&maxResults=20&regionCode=PE";
     Uri _uri = Uri.parse(_path);
 
     http.Response response = await http.get(_uri);
@@ -20,5 +22,9 @@ class APIService{
     return videosModel;
     }
       return videosModel;
+  }
+
+  getChannel(){
+    
   }
 }

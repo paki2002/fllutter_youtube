@@ -1,11 +1,17 @@
+import 'package:fllutter_youtube/models/video_model.dart';
 import 'package:flutter/material.dart';
 
 class ItemVideoWidget extends StatelessWidget {
-  const ItemVideoWidget({Key? key}) : super(key: key);
+  VideoModel  videoModel;
+
+  ItemVideoWidget({
+    required this.videoModel,
+    });
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+
     return Container(
       margin: const EdgeInsets.only(top: 6, bottom: 10.0),
       child: Column(
@@ -13,9 +19,9 @@ class ItemVideoWidget extends StatelessWidget {
           Stack(
             children: [
               Image.network(
-                "https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg?",
+                videoModel. snippet.thumbnails.high.url,
                 width: double.infinity,
-                height: height * 0.3, // You need to define 'height' or replace it with a specific value
+                height: height * 0.3, 
                 fit: BoxFit.cover,
               ),
               Positioned(
@@ -42,16 +48,16 @@ class ItemVideoWidget extends StatelessWidget {
                   ),
             ),
             title: Text(
-              "Wiz Khalifa - See You Again ft. Charlie Puth [Official Video] Furious 7 Soundtrack HD",
+              videoModel.snippet.title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: 14.0,
               ),
             ),
             subtitle: Text(
-              "Marco Antonio - 6.5 M de vistas hace 2 años",
+              "${videoModel.snippet.channelTitle} - 6.5 M de vistas hace 2 años",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
 
