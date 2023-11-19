@@ -3,7 +3,7 @@ import 'package:fllutter_youtube/ui/general/colors.dart';
 import 'package:flutter/material.dart';
 
 class initPage extends StatefulWidget {
-  const initPage({super.key});
+  const initPage({Key? key}) : super(key: key);
 
   @override
   State<initPage> createState() => _initPageState();
@@ -28,12 +28,12 @@ class _initPageState extends State<initPage> {
         backgroundColor: kBrandPrimaryColor,
         title: Image.asset(
           'assets/images/logo.png',
-          height: 56.0,
+          height: 26.0,
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.cast,
               color: Colors.white,
             ),
@@ -43,20 +43,20 @@ class _initPageState extends State<initPage> {
             icon: Stack(
               clipBehavior: Clip.none,
               children:[
-                Icon(
+                const Icon(
                   Icons.notifications_none,
                   color: Colors.white,
                 ),
                 Positioned(
-                  top: -4,
-                  right: -3,
+                  top: -2,
+                  right: -4,
                   child: Container(
-                    padding: EdgeInsets.all(1),
-                    decoration: BoxDecoration(
+                    padding:const EdgeInsets.all(2.4),
+                    decoration:const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.red,
                     ),
-                    child: Text("9+",style: TextStyle(fontSize: 12.0),),
+                    child: Text("9+",style: TextStyle(fontSize: 10.0),),
                   ),
                 ),
               ]
@@ -74,16 +74,16 @@ class _initPageState extends State<initPage> {
             ),
           ),
           const SizedBox(
-            width: 20.0,
+            width: 15.0,
           ),
           const CircleAvatar(
             backgroundColor: Colors.white12,
-            radius: 20,
+            radius: 15.0,
             backgroundImage: NetworkImage(
                 "https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?"),
           ),
           const SizedBox(
-            width: 15,
+            width: 15.0,
           )
         ],
       ),
@@ -101,35 +101,34 @@ class _initPageState extends State<initPage> {
             setState(() {});
           },
           items: [
-            BottomNavigationBarItem(
+        const   BottomNavigationBarItem(
               label: "Principal",
               icon: Icon(
                 Icons.home_filled,
               ),
             ),
-            BottomNavigationBarItem(
+        const  BottomNavigationBarItem(
               label: "Short",
               icon: Icon(
                 Icons.play_arrow_outlined,
               ),
             ),
-            BottomNavigationBarItem(
-              label: "",
-              icon: Container(
-                margin: const EdgeInsets.only(top: 4.0),
-                child: const Icon(
-                  Icons.add_circle_outline,
-                  size: 35.0,
-                ),
+        BottomNavigationBarItem(
+            label: "",
+            icon: Container(
+              margin: const EdgeInsets.only(top: 4.0),
+              child: const Icon(
+                Icons.add_circle_outline,
+                size: 33.0,
               ),
-            ),
-            BottomNavigationBarItem(
+            )),
+        const  BottomNavigationBarItem(
               label: "Suscriptores",
               icon: Icon(
                 Icons.subscriptions_rounded,
               ),
             ),
-            BottomNavigationBarItem(
+        const  BottomNavigationBarItem(
               label: "Biblioteca",
               icon: Icon(
                 Icons.video_collection_rounded,
