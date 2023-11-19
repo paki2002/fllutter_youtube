@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 
 class HomePage extends StatelessWidget {
-  APIService _apiService =APIService();
+final  APIService _apiService =APIService();
 
   @override
   Widget build(BuildContext context) {

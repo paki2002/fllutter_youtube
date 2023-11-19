@@ -16,10 +16,9 @@ class APIService{
    if(response.statusCode == 200){
     Map<String, dynamic> myMap = json.decode(response.body); 
     List videos = myMap["items"];
-    print(videos);
     videosModel = videos.map((e) => VideoModel.fromJson(e)).toList();
     return videosModel;
-      }
+    }
       return videosModel;
   }
 }
